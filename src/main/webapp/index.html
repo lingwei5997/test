@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="a">
+		<!-- div @click="handleClick">{{content}}</div>
+		<div title="this id hello world">hello world</div>
+		<input v-model="content">
+		<div>{{content}}</div>
+		姓:<input v-model="firstName"/>
+		名:<input v-model="lastName"/>
+		<div>{{fullName}}</div> -->
+		<!-- <div v-if="show">hello world</div>
+		<button @click="handleclick">tag</button> -->
+		<input v-model="inputValue"/>
+		<button @click="handleSubmit">提交</button>
+		<ul> 
+			<li v-for="(item,index) of list" :key="index">{{item}}</li>
+		</ul>
+	</div>
+	<script>
+	
+	
+	
+	
+		new Vue({
+			el:"#a",
+			//template:'<h1>hello {{msg}}</h1>',
+			data:{
+				//msg:"hello world"
+				//number:123,
+				//content:"hello",
+				/* firstName:'',
+				lastName:'', */
+				//show:true
+				inputValue:'',
+				list:[]
+			},
+			/* computed:{
+				fullName:function(){
+					return this.firstName + this.lastName
+				}
+				} */
+				/* methods:{
+					handleclick:function(){
+					 this.show = !this.show;
+				}
+			} */
+			methods:{
+				handleSubmit:function(){
+					this.list.push(this.inputValue)
+					this.inputValue='';
+				}
+			}
+		})
+	</script>
+
+
+</body>
+</html>
